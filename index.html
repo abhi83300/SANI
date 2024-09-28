@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; object-src 'none'">
+
+    <title>Chemical Supplies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<span>
+    <div class="newcontainer">
+        <h2>Chemical Supplies</h2>
+        <div class="toolbar">
+            <button id="addRow" class="btn btn-primary"><span class="icon" data-bs-placement = 'bottom' title="Add row">➕</span></button>
+            <button id="moveUp"><span class="icon" data-bs-placement = 'bottom' title="Move up">⬆️</span></button>
+            <button id="moveDown"><span class="icon" data-bs-placement = 'bottom' title="Move Down">⬇️</span></button>
+            <button id="deleteRow"><span class="icon" data-bs-placement = 'bottom' title="Delete row">🗑️</span></button>
+            <button id="saveData"><span class="icon"data-bs-placement = 'bottom' title="Save and refresh">🔄💾</span></button>
+        </div>
+    </div>
+    <div class="container">
+            <div class="table-responsive">
+        <table id="chemicalTable" class="table table-bordered table-hover table-striped">
+            <div>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th onclick="sortTable(event)">Id</th>
+                    <th onclick="sortTable(event)">Chemical Name*</th>
+                    <th onclick="sortTable(event)">Vendor*</th>
+                    <th onclick="sortTable(event)">Density<br><span class = 'unit'>g/m³</span></th>
+                    <th onclick="sortTable(event)">Viscosity<br><span class = 'unit'>m²/s</span></th>
+                    <th onclick="sortTable(event)">Packaging</th>
+                    <th onclick="sortTable(event)">Pack Size*</th>
+                    <th onclick="sortTable(event)">Unit*</th>
+                    <th onclick="sortTable(event)">Quantity*</th>
+                </tr>
+            </thead>
+            <tbody id="chemicalBody">
+                <input type="hidden" id="chemicalData" value="">
+
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>Acetone</td>
+                    <td>Chemcorp</td>
+                    <td>0.79</td>
+                    <td>0.432</td>
+                    <td>Bottle</td>
+                    <td>1</td>
+                    <td>L</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2</td>
+                    <td>Pentane</td>
+                    <td>LG Chem</td>
+                    <td>234.54</td>
+                    <td>324.78</td>
+                    <td>Bag</td>
+                    <td>5</td>
+                    <td>Kg</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3</td>
+                    <td>Sulfuric Acid</td>
+                    <td>Formosa</td>
+                    <td>1.84</td>
+                    <td>0.89</td>
+                    <td>Drum</td>
+                    <td>6</td>
+                    <td>t</td>
+                    <td>750</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>4</td>
+                    <td>Benzene</td>
+                    <td>Acid Solutions</td>
+                    <td>0.876</td>
+                    <td>0.65</td>
+                    <td>Bottle</td>
+                    <td>5</td>
+                    <td>L</td>
+                    <td>780</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>5</td>
+                    <td>Ethanol</td>
+                    <td>PureChem</td>
+                    <td>0.789</td>
+                    <td>1.2</td>
+                    <td>Bottle</td>
+                    <td>1</td>
+                    <td>L</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>6</td>
+                    <td>Methanol</td>
+                    <td>ChemWorks</td>
+                    <td>0.791</td>
+                    <td>0.6</td>
+                    <td>Drum</td>
+                    <td>50</td>
+                    <td>L</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>7</td>
+                    <td>Toluene</td>
+                    <td>ChemSource</td>
+                    <td>0.866</td>
+                    <td>0.59</td>
+                    <td>Can</td>
+                    <td>2</td>
+                    <td>L</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>8</td>
+                    <td>Chloroform</td>
+                    <td>Reagents Inc.</td>
+                    <td>1.48</td>
+                    <td>0.56</td>
+                    <td>Bottle</td>
+                    <td>1</td>
+                    <td>L</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>9</td>
+                    <td>Hydrochloric Acid</td>
+                    <td>Acids Co.</td>
+                    <td>1.18</td>
+                    <td>0.89</td>
+                    <td>Drum</td>
+                    <td>10</td>
+                    <td>L</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>10</td>
+                    <td>Acetic Acid</td>
+                    <td>FoodChem</td>
+                    <td>1.05</td>
+                    <td>1.07</td>
+                    <td>Bottle</td>
+                    <td>1</td>
+                    <td>L</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>11</td>
+                    <td>Sodium Hydroxide</td>
+                    <td>ChemSupply</td>
+                    <td>2.13</td>
+                    <td>0.7</td>
+                    <td>Bag</td>
+                    <td>25</td>
+                    <td>Kg</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>12</td>
+                    <td>Ammonia</td>
+                    <td>AquaChem</td>
+                    <td>0.73</td>
+                    <td>0.49</td>
+                    <td>Cylinder</td>
+                    <td>10</td>
+                    <td>L</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>13</td>
+                    <td>Sodium Chloride</td>
+                    <td>SaltWorks</td>
+                    <td>2.16</td>
+                    <td>0.0</td>
+                    <td>Bag</td>
+                    <td>5</td>
+                    <td>Kg</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>14</td>
+                    <td>Calcium Carbonate</td>
+                    <td>Minerals Inc.</td>
+                    <td>2.71</td>
+                    <td>0.0</td>
+                    <td>Bag</td>
+                    <td>25</td>
+                    <td>Kg</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>15</td>
+                    <td>Potassium Chloride</td>
+                    <td>ChemMart</td>
+                    <td>1.98</td>
+                    <td>0.0</td>
+                    <td>Bag</td>
+                    <td>1</td>
+                    <td>Kg</td>
+                    <td>150</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>double tap on any row to edit</p>
+
+    <script src="script.js"></script>
+</span>
+</body>
+</html>

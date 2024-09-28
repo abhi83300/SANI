@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.tick-column {
+    width: 30px;
+    text-align: center;
+}
+
+.tt{
+    background-color: #000;
+    color: white;
+}
+
+.tick {
+    font-size: 25px;
+    color: #808080; 
+    transition: color 0.2s ease;
+}
+
+tr.selected .tick {
+    color: #00008B; 
+
+}
+tbody tr.selected {
+    background-color: #E6F3FF; 
+}
+
+.newcontainer {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    
+}
+
+.units-row {
+    background-color: #e9ecef; 
+    font-size: 14px; 
+    color: #555; 
+}
+
+.tick-column {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(27, 19, 118);
+    width: 30px;
+}
+  
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+h2 {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button .icon {
+    font-size: 18px;
+}
+
+.table-container {
+    margin-top: 20px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    table-layout: auto;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+
+}
+
+thead {
+    border-bottom: 2px solid #dee2e6;
+}
+
+thead th {
+    padding: 16px;
+    cursor: pointer;
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+tbody tr {
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr.selected {
+    background-color: #add8e6; 
+    color: #000;
+}
+
+th .unit {
+    font-size: 0.8em;
+    color: grey; 
+    font-weight: lighter;
+}
+
+.min-width {
+    min-width: 100px; 
+}
+
+.expand {
+    width: 100%;
+}
+
+.edit-input {
+    width: 100%; 
+    padding: 10px; 
+    box-sizing: border-box;
+    font-size: 16px; 
+    border: 1px solid #ddd;
+}
+
+input {
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    tbody, thead, tr, td, th {
+        display: block;
+        width: 100%;
+    }
+
+    td, th {
+        box-sizing: border-box;
+    }
+}
